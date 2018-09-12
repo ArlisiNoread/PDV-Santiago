@@ -1,0 +1,27 @@
+.contenedor-tiendas{
+    text-align: center !important;
+}
+
+.contenedor-tiendas .row .col-4 {
+    padding: 0;
+}
+
+.tienda-thumbnail {
+    position: relative;
+    top: 10px;
+    width: 30vw !important;
+    height: 100px;
+    background-color: #EAE6DA;
+    margin: 3px;
+    margin-left: 6px;
+}
+
+.img-tienda-thumbnail{
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}

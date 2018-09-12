@@ -1,0 +1,10 @@
+.check-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(188,247,43,0.8);
+    color: black;
+    text-align: center;
+    padding: 10px;
+}

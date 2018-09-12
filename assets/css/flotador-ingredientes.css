@@ -1,0 +1,26 @@
+.flotador-ingredientes {
+    position: fixed;
+    z-index: 1100;
+    background-color: pink;
+    width: 90%;
+    /*    height: 80vh;*/
+    top: 150%;
+    /*    top: 500%;*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease 0s;
+}
+
+.flotador-ingredientes .col-6{
+    padding: 0 !important;
+
+}
+
+.boton-cerrado-flotador-ingredientes{
+    text-align: right;
+    font-size: 30px;
+}
+
+.lista-ingredientes{
+
+}
