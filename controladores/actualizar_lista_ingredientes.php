@@ -5,7 +5,11 @@ include '../persistencia/db_config.php';
 
 $id_producto = $_POST["id_producto"];
 
+//echo 'ECHO DEL POST' . $_POST["id_producto"];
+
 $sql = "SELECT fk_lista_ingredientes FROM portal_pdv.producto WHERE id = " . $id_producto . ";";
+
+//echo 'Echo del sql: ' . $sql;
 if (!$result = $conn->query($sql)) {
     echo "Sorry, the website is experiencing problems.";
 
@@ -27,6 +31,8 @@ while ($array_resultados = $result->fetch_row()) {
 
 
 $sql = "SELECT * FROM portal_pdv.ingredientes WHERE fk_lista_ingredientes = " . $id_lista_ingredientes . ";";
+//echo 'Echo del sql: ' . $sql;
+
 if (!$result = $conn->query($sql)) {
     echo "Sorry, the website is experiencing problems.";
 
@@ -45,8 +51,9 @@ $ingredientes = array();
 while ($array_resultados = $result->fetch_row()) {
     array_push($ingredientes, $array_resultados);
 }
+//echo var_dump($ingredientes);
 
-echo json_encode($ingredientes);
+echo utf8_encode(json_encode($ingredientes, JSON_UNESCAPED_UNICODE));
 //echo var_dump($ingredientes);
 
 

@@ -24,9 +24,9 @@ function imprimirCajaFlotadoraDeIngredientes(arregloDeIngredientes) {
                 '<div class="col-6">' +
                 '<label class>' +
                 '<input type="checkbox" name="ingrediente" value="' + arregloDeIngredientes[i][0] + '">' +
-                arregloDeIngredientes[i][1] +
+                arregloDeIngredientes[i][1].toString('utf-8') +
                 '</label>' +
-                '</div>'
+                '</div>'.toString('utf8')
                 );
 
     }
@@ -38,6 +38,7 @@ function llenarCajaFlotadoraDeIngredientesConAjax(id_producto) {
         //En caso de que id_producto sea null
         return;
     }
+    console.log(id_producto);
     var arregloDeIngredientes;
     $.ajax({
         type: 'POST',
@@ -52,7 +53,7 @@ function llenarCajaFlotadoraDeIngredientesConAjax(id_producto) {
             console.log('Comunicación exitosa');
             console.log(data);
             arregloDeIngredientes = JSON.parse(data);
-            console.log(arregloDeIngredientes);
+            console.log(arregloDeIngredientes) ;
             imprimirCajaFlotadoraDeIngredientes(arregloDeIngredientes);
 
         },
@@ -111,6 +112,7 @@ $(document).ready(function () {
         aparecerCajaFlotadoraDeIngredientes();
         limpiarCajaFlotadoraDeIngredientes();
         var productoID = busquedaDeInputs();
+        console.log('Busqueda de inputs: ' + productoID[0]);
         llenarCajaFlotadoraDeIngredientesConAjax(productoID[0]);
 
 
